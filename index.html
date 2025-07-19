@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Mosley Mechanic Calculator</title>
+</head>
+<body>
+  <div class="center">
+
+    <div class="col">
+      <div class="row">
+        <label>Body Kit</label>
+        <input type="number" name="" id="" data-factor="5" style="margin-left: 10px;" value="0">
+      </div>
+      <div class="row">
+        <label>Performans</label>
+        <input type="number" name="" id="" data-factor="10" style="margin-left: 10px;" value="0">
+      </div>
+
+    </div>
+
+    <div class="col">
+      <div class="row">
+        <label>V12</label>
+        <input type="number" name="" id="" data-factor="20" style="margin-left: 10px;" value="0">
+      </div>
+      <div class="row">
+        <label>V8</label>
+        <input type="number" name="" id="" data-factor="30" style="margin-left: 10px;" value="0">
+      </div>
+      <div class="row">
+        <label>v6</label>
+        <input type="number" name="" id="" data-factor="40" style="margin-left: 10px;" value="0">
+      </div>
+
+    </div>
+
+  </div>
+  <div class="total">
+    <h1 id="total2">Toplam</h1>
+  </div>
+
+  <script>
+    const inputs = document.querySelectorAll('input[type="number"]');
+    const totalDiv = document.getElementById('total2');
+
+    function calculateTotal() {
+      let total = 0;
+      inputs.forEach(input => {
+        const quantity = parseFloat(input.value) || 0;
+        const factor = parseFloat(input.dataset.factor);
+        total += quantity * factor;
+      });
+      totalDiv.textContent = `Toplam: ${total.toLocaleString('tr-TR')}`;
+    }
+
+    inputs.forEach(input => {
+      input.addEventListener('input', calculateTotal);
+    });
+
+    calculateTotal();
+  </script>
+</body>
+</html>
