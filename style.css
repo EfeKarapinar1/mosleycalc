@@ -22,13 +22,13 @@ img{
 }
 .center{
     width: 100%;
-    max-height: 100vh;
+    max-height: 300vh;
 
     display: flex;
     justify-content: space-around;
 }
 .col{
-    border: 2px solid white;
+    border: 1px solid white;
     border-radius: 10px;
 }
 .row{
@@ -39,7 +39,7 @@ img{
 }
 input[type=number]{
     border-radius: 5px;
-    border: 2px solid white;
+    border: 1px solid white;
     outline: 0;
     width: 50px;
 } 
@@ -54,4 +54,11 @@ h1{
     font-size: 2rem;
 }
 
-
+@media only screen and (min-width: 600px) {
+  *{
+    font-size: 1.3rem;
+  }
+  h1{
+    font-size: 2.5rem;
+}
+}
